@@ -79,7 +79,9 @@ export default {
       });
       console.log;
       this.exportToCsv(
-        "2323.csv",
+        new Date().toLocaleDateString() +
+          new Date().toLocaleTimeString() +
+          ".csv",
         this.list.map(item => [
           "b" +
             (item.countryCode || "NOCOUNTRY") +
