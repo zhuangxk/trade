@@ -9,6 +9,9 @@
     共{{ list.length }} 条数据
     <el-button type="primary" @click="start">开始整理</el-button>
     <el-button type="primary" @click="exportCVS">导出数据</el-button>
+    <el-button type="primary" @click="dialogVisible = true"
+      >配置批次 ({{ ord }})</el-button
+    >
     <el-table :data="list" style="width: 100%" @sort-change="sortChange">
       <el-table-column type="index" width="100"> </el-table-column>
       <el-table-column sortable prop="name" label="昵称"> </el-table-column>
@@ -16,6 +19,14 @@
       <el-table-column prop="email" label="邮箱"> </el-table-column>
       <el-table-column sortable prop="country" label="国家"> </el-table-column>
     </el-table>
+    <el-dialog title="批次配置" :visible.sync="dialogVisible" width="30%">
+      <el-input v-model="ord"></el-input>
+      <span slot="footer" class="dialog-footer">
+        <el-button type="primary" @click="dialogVisible = false"
+          >确 定</el-button
+        >
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -27,7 +38,9 @@ export default {
     return {
       list: [],
       countries,
-      textarea: ""
+      textarea: "",
+      ord: "a",
+      dialogVisible: false
     };
   },
   methods: {
@@ -83,7 +96,7 @@ export default {
           new Date().toLocaleTimeString() +
           ".csv",
         this.list.map(item => [
-          "b" +
+          this.ord +
             (item.countryCode || "NOCOUNTRY") +
             ("000" + item.countryIndex).slice(-4) +
             " > " +
