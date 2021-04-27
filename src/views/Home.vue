@@ -49,7 +49,9 @@ export default {
       const l = this.textarea.split("\n");
       l.forEach(element => {
         const i = element.split("\t");
-        const c = this.getCountry(i[1]);
+        // console.log(i);
+        const c = this.getCountry(i[1].trim());
+        // console.log(c);
         arr.push({
           name: i[0],
           num: i[1],
