@@ -1,0 +1,18 @@
+2021-04-27 00:26:38,463 INFO sqlalchemy.engine.Engine SHOW VARIABLES LIKE 'sql_mode'
+2021-04-27 00:26:38,464 INFO sqlalchemy.engine.Engine [raw sql] {}
+2021-04-27 00:26:38,485 INFO sqlalchemy.engine.Engine SHOW VARIABLES LIKE 'lower_case_table_names'
+2021-04-27 00:26:38,486 INFO sqlalchemy.engine.Engine [generated in 0.00089s] {}
+2021-04-27 00:26:38,526 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2021-04-27 00:26:38,527 INFO sqlalchemy.engine.Engine [raw sql] {}
+2021-04-27 00:26:38,580 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2021-04-27 00:26:38,581 INFO sqlalchemy.engine.Engine SELECT config.id AS config_id, config.ibm_user_index AS config_ibm_user_index 
+FROM config 
+ LIMIT %(param_1)s
+2021-04-27 00:26:38,581 INFO sqlalchemy.engine.Engine [generated in 0.00025s] {'param_1': 1}
+2021-04-27 00:26:38,604 INFO sqlalchemy.engine.Engine ROLLBACK
+2021-04-27 00:26:49,362 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2021-04-27 00:26:49,363 INFO sqlalchemy.engine.Engine SELECT config.id AS config_id, config.ibm_user_index AS config_ibm_user_index 
+FROM config 
+ LIMIT %(param_1)s
+2021-04-27 00:26:49,363 INFO sqlalchemy.engine.Engine [cached since 10.78s ago] {'param_1': 1}
+2021-04-27 00:26:49,384 INFO sqlalchemy.engine.Engine ROLLBACK
