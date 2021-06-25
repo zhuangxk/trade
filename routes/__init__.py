@@ -1,1 +1,1 @@
-from routes import user_handler
+from routes import index

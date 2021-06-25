@@ -5,7 +5,7 @@ import requests
 import json
 import time
 
-@app.route('/custom_original', methods=['POST'])
+@app.route('/original', methods=['POST'])
 def add_user():
     
     config = Config.query.filter_by().first()
