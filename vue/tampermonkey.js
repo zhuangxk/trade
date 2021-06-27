@@ -14,10 +14,11 @@
     function init(){
         'use strict';
         var html = `
-        <div style="width:500px;height:100vh;background:rgba(255,255,255,0.8);position:fixed;right:0;top:0;bottom:0;padding:20px;overflow: auto">
-        <button>开始</button>
+        <div style="width:500px;height:100vh;background:rgba(255,255,255,0.8);position:fixed;right:0;top:0;bottom:0;padding:50px 20px;overflow: auto;font-size:12px">
+        <button style="color:red;font-size:20px;">开始</button>
+        <br />
         ---
-        <table border="0" id="trade-table">
+        <table border="0" id="trade-table">
 
         </table>
         ---
@@ -34,7 +35,7 @@
 
 
     function addRow(table){
-        
+
         const telNode = document.querySelector('button.CsEnBe[data-tooltip="复制电话号码"]')
         const tel = telNode && telNode.dataset.itemId
         const websiteNode = document.querySelector("button.CsEnBe[data-tooltip='打开网站']")
@@ -47,7 +48,7 @@
     function sleep (time) {
         return new Promise((resolve) => setTimeout(resolve, time));
     }
-      
+
      function start(){
         console.log("start !!")
         const container = init()
@@ -64,7 +65,7 @@
                 table.innerHTML = table.innerHTML + `<tr><td>${name}</td><td>${tel}</td><td>${website}</td></tr>`
                 nameSet.add(tel)
             }
-        
+
         },100)
         button.onclick = async ()=>{
             const domlist = document.querySelectorAll(".W7kqEc-haAclf")
@@ -76,10 +77,10 @@
                 domlist[index].click()
                 await sleep(3000)
                 console.log("后"+index)
-                
+
                 console.log(index + "索引索引")
-               
-                
+
+
             }
         }
     }
